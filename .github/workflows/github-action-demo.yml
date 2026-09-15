@@ -9,4 +9,6 @@ jobs:
         run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Segundo Step do fluxo
         run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Terceiro Step do fluxo
+        run: echo "O repositório que está sendo utilizado é ${{ github.repository }}."
       

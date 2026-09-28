@@ -1,4 +1,4 @@
-name: Continuos Integration
+name: Deploy do Meu Site
 on:
   push:
     branches: ["main","master"]
@@ -10,7 +10,7 @@ on:
         runs-on: ubuntu-latest
         steps:
           - name: Checkout do código
-            uses: actions/checkout@v4
+            uses: actions/checkout@v4##
 
           - name: Verificar arquivos essenciais
             run: |

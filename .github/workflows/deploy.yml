@@ -12,4 +12,12 @@ on:
           - name: Checkout do código
             uses: actions/checkout@v4
 
-          - name: 
+          - name: Verificar arquivos essenciais
+            run: |
+            test -f index.html && echo "HTML encontrado!"
+            test -f style.css && echo "CSS encontrado!"
+
+          - name: Verificar memórioa RAM
+            run: lsb_release -a && free -h
+
+            

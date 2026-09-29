@@ -19,5 +19,11 @@ on:
 
           - name: Verificar memórioa RAM
             run: lsb_release -a && free -h
+          
+          - name: Explorando o Runner
+            run: |
+              lsb_release -a
+              free -h
+              nproc
 
             

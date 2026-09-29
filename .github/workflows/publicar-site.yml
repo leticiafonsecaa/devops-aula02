@@ -1,29 +1,21 @@
 name: Deploy do Meu Site
+
 on:
   push:
-    branches: ["main","master"]
-    pull_request:
-      branches: ["main"]
-    
-    jobs:
-      validacao-estatica:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout do código
-            uses: actions/checkout@v4
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main"]
 
-          - name: Verificar arquivos essenciais
-            run: |
-            test -f index.html && echo "HTML encontrado!"
-            test -f style.css && echo "CSS encontrado!"
+jobs:
+  validacao-estatica:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-          - name: Verificar memórioa RAM
-            run: lsb_release -a && free -h
-          
-          - name: Explorando o Runner
-            run: |
-              lsb_release -a
-              free -h
-              nproc
-
-            
+      - name: Verificar arquivos essenciais
+        run: |
+          test -f index.html
+          echo "HTML encontrado!"
+          test -f style.css
+          echo "CSS encontrado!"

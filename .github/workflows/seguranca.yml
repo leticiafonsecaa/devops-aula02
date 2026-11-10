@@ -1,0 +1,19 @@
+name: Teste de Seguranca
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  teste-secret:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar Secret
+        env:
+          CHAVE_MESTRA: ${{ secrets.CHAVE_MESTRA }}
+        run: |
+          echo "Testando a proteção da Secret:"
+          echo "$CHAVE_MESTRA"

@@ -1,0 +1,4 @@
+# Arquivos de configuração e senhas
+.env
+.env.*
+*.env
